@@ -2,7 +2,7 @@ def main():
     emails_name = {}
     email = input("Email: ")
     while email != "":
-        name = get_name_from_emails(email)
+        name = get_name(email)
         confirmation = input("Is your name {}? (Y/n) ".format(name))
         if confirmation.upper() != "Y" and confirmation != "":
             name = input("Name: ")
@@ -13,7 +13,7 @@ def main():
         print("{} ({})".format(name, email))
 
 
-def get_name_from_emails(email):
+def get_name(email):
     prefix = email.split('@')[0]
     parts = prefix.split('.')
     name = " ".join(parts).title()
